@@ -283,5 +283,9 @@ class ServicesController extends Controller
         return view('client.reservation')->with('service_id',$service_id)->with('service_provider_id',$svp_id)->with('task_id',$task_id);
     }
 
+    public static function getAllCount()
+    {
+        return Service::all()->count();
+    }
 
 }

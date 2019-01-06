@@ -411,4 +411,8 @@ class ClientsController extends Controller
         
         return redirect('/client/dash')->with('success','Logged in Successfully');
     }
+
+    public static function getAllClientCount(){
+        return Client::all()->count();
+    }
 }

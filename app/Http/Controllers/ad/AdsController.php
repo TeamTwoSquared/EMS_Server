@@ -515,5 +515,10 @@ class AdsController extends Controller
         $ad = Ad::find($id);
         return view('admin.ad.view')->with('ad',$ad);
     }
+
+    public static function getAllCount()
+    {
+        return Ad::all()->count();
+    }
     
 }

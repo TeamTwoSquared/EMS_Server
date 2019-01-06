@@ -9,7 +9,7 @@ die();
 $admin=AdminsController::getAdmin();
 @endphp
 <div class="row" data-pg-collapsed>
-    <div class="col-lg-9">
+    <div class="col-md-9 mr-auto ml-auto">
         <div class="card">
             <div class="card-header">Change your Account Details</div>
             <div class="card-body card-block">
@@ -40,7 +40,7 @@ $admin=AdminsController::getAdmin();
     </div>
 </div>
 <div class="row" data-pg-collapsed>
-    <div class="col-lg-9">
+    <div class="col-md-9 mr-auto ml-auto">
         <div class="card">
             <div class="card-header">Change your Profile Picture</div>
             <div class="card-body card-block">

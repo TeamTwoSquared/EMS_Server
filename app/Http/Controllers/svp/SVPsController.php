@@ -397,4 +397,10 @@ class SVPsController extends Controller
         return view('client.showSVP')->with('svp_id',$id);
     }
 
+    public static function getAllSVPCount()
+    {
+        $svp = SVP::all();
+        return $svp->count();
+    }
+
 }//end of class
