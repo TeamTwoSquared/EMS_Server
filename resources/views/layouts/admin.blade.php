@@ -96,10 +96,7 @@ use Illuminate\Support\Facades\DB;
                             </li>                             
                             <li> 
                                 <a href="/admin/client"> <i class="far fa-user-circle"></i>Manage Clients</a> 
-                            </li>                             
-                            <li> 
-                                <a href="/admin/payment"> <i class="fas fa-money-bill-alt"></i>Manage Payments</a> 
-                            </li>                             
+                            </li>                                                          
                             <li> 
                                 <a href="/admin/ad"> <i class="fab fa-adversal"></i></i>Manage Ads</a> 
                             </li>                             
@@ -143,10 +140,7 @@ use Illuminate\Support\Facades\DB;
                             </li>                             
                             <li> 
                                 <a href="/admin/client"> <i class="far fa-user-circle"></i>Manage Clients</a> 
-                            </li>                             
-                            <li> 
-                                <a href="/admin/payment"> <i class="fas fa-money-bill-alt"></i>Manage Payments</a> 
-                            </li>                             
+                            </li>                                                          
                             <li> 
                                 <a href="/admin/ad"> <i class="fab fa-adversal"></i></i>Manage Ads</a> 
                             </li>                             
