@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @php
-  use App\Http\Controllers\SVP\SVPsController;
-  use App\Http\Controllers\Client\ClientsController;
+  use App\Http\Controllers\svp\SVPsController;
+  use App\Http\Controllers\client\ClientsController;
   use App\Http\Controllers\ad\AdsController;
   use App\Http\Controllers\service\ServicesController;
   $count_svp = SVPsController::getAllSVPCount();
