@@ -125,12 +125,8 @@ $client=ClientsController::getClient();
                                             <div class="account-dropdown__item"> 
                                                 <a href="/client/profile"> <i class="zmdi zmdi-account"></i>Account</a> 
                                             </div>                                             
-                                            <div class="account-dropdown__item"> 
-                                                <a href="/client/settings"> <i class="zmdi zmdi-settings"></i>Setting</a> 
-                                            </div>                                             
-                                            <div class="account-dropdown__item"> 
-                                                <a href="/client/payments"> <i class="zmdi zmdi-money-box"></i>Payments</a> 
-                                            </div>                                             
+                                                                                         
+                                                                                         
                                         </div>                                         
                                         <div class="account-dropdown__footer"> 
                                             <a href="/client/logout"> <i class="zmdi zmdi-power"></i>Logout</a> 
@@ -240,12 +236,7 @@ $client=ClientsController::getClient();
                                     <div class="account-dropdown__item"> 
                                         <a href="/client/profile"> <i class="zmdi zmdi-account"></i>Account</a> 
                                     </div>                                     
-                                    <div class="account-dropdown__item"> 
-                                        <a href="/client/settings"> <i class="zmdi zmdi-settings"></i>Setting</a> 
-                                    </div>                                     
-                                    <div class="account-dropdown__item"> 
-                                        <a href="/client/payments"> <i class="zmdi zmdi-money-box"></i>Payments</a> 
-                                    </div>                                     
+                                                                      
                                 </div>                                 
                                 <div class="account-dropdown__footer"> 
                                     <a href="/client/logout"> <i class="zmdi zmdi-power"></i>Logout</a> 
