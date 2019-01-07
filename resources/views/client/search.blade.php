@@ -45,17 +45,10 @@
                             <input id="low" onchange="autoFilterPrice()" type="number" min="0" class="form-control" id="">
                             <label class="pl-2">to</label>
                             <input id="high" onchange="autoFilterPrice()" type="number" min="0" class="form-control" id="">
-                            <i id="btnSearch" class="fas fa-chevron-circle-right pl-3"></i>
+                            
+                            <i id="btnSearch" class="fas fa-search pt-3 pl-3" style="cursor: pointer;"></i>
                         </div>                         
                     </form>
-                </div>
-                <hr/>
-                <div class="row ">
-                    <h6 class="font-weight-bold">Online Status</h6>
-                    <div class="form-check col-md-12 form-check-inline pl-2"> 
-                        <input class="form-check-input" type="checkbox" id="formInput50" value="option1"> 
-                        <label class="form-check-label" for="formInput50">Online</label>                         
-                    </div>
                 </div>
                 <hr/>
                 <div class="row ">
@@ -78,18 +71,7 @@
                     </div>
                 </div>
                 <hr/>
-                <div class="row">
-                    <div class="form-group col-md-12 pl-0"> 
-                        <label for="formInput9">
-                            <h6> <strong>Service Location</strong> </h6>
-                        </label>                         
-                        <select id="formInput9" class="form-control pt-0 "> 
-                            <option value="0">Select a District</option>                             
-                            <option value="1">1</option>                             
-                            <option>3</option>                             
-                        </select>
-                    </div>
-                </div>                 
+                                 
             </div>
             <div class="col-md-10">
                 @if(count($service_ids)>0)

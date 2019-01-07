@@ -45,7 +45,7 @@
                             <input id="low" onchange="autoFilterPrice()" type="number" min="0" class="form-control" id="">
                             <label class="pl-2">to</label>
                             <input id="high" onchange="autoFilterPrice()" type="number" min="0" class="form-control" id="">
-                            <i id="btnSearch" class="fas fa-chevron-circle-right pl-3"></i>
+                            <i id="btnSearch" class="fas fa-search pt-3 pl-3" style="cursor: pointer;"></i>
                         </div>                         
                     </form>
                 </div>

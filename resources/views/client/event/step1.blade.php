@@ -42,11 +42,11 @@
                     </div>
                     <div class="row">
                         <div class="col-md-4 mb-3">
-                            <label for="validationDefault01">Event Start Time</label>
+                            <label for="validationDefault01">From</label>
                             <input type="time" class="form-control" id="validationDefault01" placeholder="My First Event" name = "event_stime" id="event_stime" value="" required>
                         </div>
                         <div class="col-md-4 mb-3">
-                            <label for="validationDefault02">Event End Time</label>
+                            <label for="validationDefault02">To</label>
                             <input type="time" class="form-control" id="validationDefault02" placeholder="" name = "event_etime" id="event_etime" value="" required>
                         </div>
                         <input type="hidden" name="event_id" id="event_id" value="0">

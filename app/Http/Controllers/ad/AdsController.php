@@ -228,7 +228,9 @@ class AdsController extends Controller
         }
 
         if($request->ad_type==1 && $request->content==NULL) return redirect()->back()->with('error','Please Enter Contents for Your Text-Ad');
-        if(substr($request->ad_url, 0, 7) != "http://" && substr($request->ad_url, 0, 8) != "https://") return redirect()->back()->with('error','Please Enter http:// or https:// at the begining of URL');
+        if($request->ad_url){
+            if(substr($request->ad_url, 0, 7) != "http://" && substr($request->ad_url, 0, 8) != "https://") return redirect()->back()->with('error','Please Enter http:// or https:// at the begining of URL');
+        }
         $ad= Ad::find($id);
         
         AdsController::picsDestroy($ad->ad_id);

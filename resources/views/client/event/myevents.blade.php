@@ -46,7 +46,7 @@
                         
                     <div class="card-body">
                             <h4 class="card-title text-capitalize">{{$event->name}}</h4>
-                        <a href="/client/myevents/{{$event->event_id}}" class="btn btn-sm btn-success">Edit</a>
+                        <a href="/client/myevents/{{$event->event_id}}" class="btn btn-sm btn-success">View</a>
                         <button type="button" name="remove" id="{{$event->event_id}}" onclick ="deleteMe(this.id)" class="btn btn-sm btn-danger">Delete</button>
                         <script type="text/javascript">
                             function deleteMe(event_id)

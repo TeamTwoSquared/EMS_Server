@@ -110,11 +110,11 @@ $default_tasks = EventTemplateTasksController::getTasks($my_event_id);
                                     <input type="date" class="form-control" placeholder="" name = "event_date" id="event_date" value="{{$my_event->date}}" required>
                                 </div>
                                 <div class="col-md-4 mb-3">
-                                    <label for="validationDefault02">Event Start Time</label>
+                                    <label for="validationDefault02">From</label>
                                     <input type="time" class="form-control" placeholder="" name = "event_stime" id="event_date" value="{{$my_event->stime}}" required>
                                 </div>
                                 <div class="col-md-4 mb-3">
-                                    <label for="validationDefault02">Event Start Time</label>
+                                    <label for="validationDefault02">To</label>
                                     <input type="time" class="form-control" placeholder="" name = "event_etime" id="event_date" value="{{$my_event->etime}}" required>
                                 </div>
                                 <input type="hidden" name="event_id" id="event_id" value="{{$my_event->event_id}}">
@@ -158,19 +158,6 @@ $default_tasks = EventTemplateTasksController::getTasks($my_event_id);
                                     @endif
                                     <td>
                                         <div class="table-data-feature flex-row-reverse">
-                                            
-                                                <button type="button" name="down" id="down" class="item down_button" title="Move Down">
-                                                    <i class="fa-chevron-down fa"></i>
-                                                </button>
-                                           
-                                            &nbsp;
-                                            
-                                                <button type="button"  name="up" id="up" class="item up_button" title="Move Up">
-                                                    <i class="fa fa-chevron-up"></i>
-                                                </button>
-                                                
-                                            
-                                            &nbsp;
                                             <button type="button" name="remove" id="{{$i++}}" class="item btn_remove" title="Delete">
                                                 <i class="zmdi zmdi-delete"></i>
                                             </button>
