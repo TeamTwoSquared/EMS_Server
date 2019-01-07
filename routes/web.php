@@ -100,6 +100,10 @@ Route::get('/admin/settings', function (){
 
 });
 Route::post('/admin/save_profile', 'admin\AdminsController@save_profile');
+
+Route::post('/admin/settings/payhere', 'SettingsController@save_payhere');
+Route::post('/admin/settings/ads', 'SettingsController@save_adConfig');
+
 Route::post('/admin/change_img', 'admin\AdminsController@change_img');
 Route::get('/admin/logout', function (){
     session()->flush();

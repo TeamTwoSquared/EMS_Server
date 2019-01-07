@@ -49,11 +49,25 @@
                                         <i class="zmdi zmdi-edit"></i>
                                     </button>
                                 </a>
+                                @if($customer->isverified == 1)
                                 <a href="client/block/{{$customer->customer_id}}">
                                     <button class="item" data-toggle="tooltip" data-placement="top" title="Lock">
                                         <i class="fa fa-lock"></i>
                                     </button>
                                 </a>
+                                @elseif($customer->isverified == 0)
+                                <a href="client/block/{{$customer->customer_id}}">
+                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Approve">
+                                        <i class="fas fa-check"></i>
+                                    </button>
+                                </a>
+                                @else
+                                <a href="client/block/{{$customer->customer_id}}">
+                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Un-Lock">
+                                        <i class="fas fa-lock-open"></i>
+                                    </button>
+                                </a>
+                                @endif
                                 
                                     <button onclick ="deleteMe({{$customer->customer_id}})" class="item" data-toggle="tooltip" data-placement="top" title="Delete">
                                         <i class="zmdi zmdi-delete"></i>

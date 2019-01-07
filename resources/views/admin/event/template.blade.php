@@ -65,12 +65,25 @@ use App\Http\Controllers\event\CatergoryTemplatesController;
                                         <i class="zmdi zmdi-edit"></i>
                                     </button>
                                 </a>
+                                @if($template->istemp == 0)
                                 <a href="template/block/{{$template->template_id}}">
                                     <button class="item" data-toggle="tooltip" data-placement="top" title="Lock">
                                         <i class="fa fa-lock"></i>
                                     </button>
                                 </a>
-                                
+                                @elseif($template->istemp == 1)
+                                <a href="template/block/{{$template->template_id}}">
+                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Approve">
+                                        <i class="fas fa-check"></i>
+                                    </button>
+                                </a>
+                                @else
+                                <a href="template/block/{{$template->template_id}}">
+                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Un-Lock">
+                                        <i class="fas fa-lock-open"></i>
+                                    </button>
+                                </a>
+                                @endif
                                     <button onclick ="deleteMe({{$template->template_id}})" class="item" data-toggle="tooltip" data-placement="top" title="Delete">
                                         <i class="zmdi zmdi-delete"></i>
                                         <script>
