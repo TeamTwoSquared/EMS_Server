@@ -4,6 +4,7 @@
     use App\Http\Controllers\service\ServicesController;
     use App\Http\Controllers\service\ServiceImagesController;
     use App\Http\Controllers\svp\SVPsController;
+    use App\Http\Controllers\review\ReviewsController;
 @endphp
 
 <section class="au-breadcrumb2 pad-bottom5 pad15" data-pg-collapsed> 
@@ -99,6 +100,7 @@
                     $service = ServicesController::getService($service_id);
                     $svp = SVPsController::getSVP2($service->service_provider_id);
                     $randomImage=ServiceImagesController::getRandomImages($service->service_id);
+                    $svp_star = ReviewsController::showStar($svp->star);
                     @endphp
                         <div class="card col-md-3 pt-1 mb-4">
                         <a href="/client/view/service/{{$service->service_id}}/{{$task_id}}">
@@ -124,9 +126,9 @@
                                     </div>
                                 </div>
                                 <p class="card-text"><a href="/client/view/service/{{$service->service_id}}/{{$task_id}}">{{$service->name}}</a></p>
-                                <p class="card-text"><i class="fa fa-star"></i> {{$svp->star}}.0</p>
+                                <p class="card-text"><i class="fa fa-star"></i> {{$svp_star}}.0</p>
                                 <p class="card-text"><i class="far fa-money-bill-alt"></i> {{$service->price}}</p>
-                                <p class="card-text"><i class="fas fa-box"></i> Package Service</p>
+                                
                             </div>
                         </div>
                     @endforeach

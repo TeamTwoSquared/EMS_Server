@@ -5,9 +5,11 @@
     use App\Http\Controllers\service\ServiceImagesController;
     use App\Http\Controllers\svp\SVPsController;
     use App\Http\Controllers\service\ServiceVideosController;
+    use App\Http\Controllers\review\ReviewsController;
 
     $svp = SVPsController::getSVP2($svp_id);
     $services = ServicesController::getServices($svp_id);
+    $svp_star = ReviewsController::showStar($svp->star);
 @endphp
 
 <section class="au-breadcrumb2 pad-bottom5 pad15" data-pg-collapsed> 
@@ -55,7 +57,6 @@
                         <div class="card-body pt-2 ">
                             <p class="card-text"><a href="/client/view/service/{{$service->service_id}}">{{$service->name}}</a></p>
                             <p class="card-text"><i class="far fa-money-bill-alt"></i> {{$service->price}}</p>
-                            <p class="card-text"><i class="fas fa-box"></i> Package Service</p>
                         </div>
                     </div>
                     @endforeach
@@ -81,10 +82,10 @@
                                         <i class="fa fa-map-marker"></i> {{$svp->city}}
                                     </div>
                                     <p class="card-text text-sm-center">
-                                        @for ($i = 0; $i < $svp->star; $i++)
+                                        @for ($i = 0; $i < $svp_star; $i++)
                                             <i class="fa fa-star"></i>
                                         @endfor
-                                        {{$svp->star}}.0
+                                        {{$svp_star}}.0
                                     </p>
                                     <p class="card-text text-sm-center">
                                         @if($svp->level == 0) (New)

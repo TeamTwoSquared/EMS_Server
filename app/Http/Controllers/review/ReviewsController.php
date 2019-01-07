@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 use App\Review;
 use App\Reviewing;
 use App\EventTemplateTask;
+use App\SVP;
+
 class ReviewsController extends Controller
 { 
     public static function israted($event_id,$task_id)
@@ -52,6 +54,23 @@ class ReviewsController extends Controller
     DB::table('event_template_tasks')->where('event_id', '=', $request->event)
     ->where('task_id', '=', $request->task)
     ->update(array('israted' => 1));
+    
+    //Update SVP overall rate
+        $svp = SVP::find($request->svp);
+        if($svp->star==0) $new_star = $request->selected_rating;
+        else {
+            $new_star = ($svp->star + $request->selected_rating)/2;
+        }
+        $svp->star = $new_star;
+        $svp->save();
+    }
 
+    public static function showStar($val)
+    {
+        $whole = floor($val);
+        $fraction = $val - $whole;
+        
+        if($fraction > 0.7) return $whole+1;
+        else return $whole;
     }
 }
