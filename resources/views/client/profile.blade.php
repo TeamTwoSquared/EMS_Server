@@ -14,7 +14,7 @@ session()->forget('default_event');
     <div class="section__content section__content--p30"> 
         <div class="container-fluid">
             <div class="row" data-pg-collapsed> 
-                <div class="col-lg-9"> 
+                <div class="col-md-9 ml-auto mr-auto"> 
                     <div class="card"> 
                         <div class="card-header">Change your Account Details</div>             
                         <div class="card-body card-block"> 
@@ -66,7 +66,7 @@ session()->forget('default_event');
 
 
             <div class="row" data-pg-collapsed>
-                <div class="col-lg-9">
+                <div class="col-md-9 ml-auto mr-auto">
                     <div class="card">
                         <div class="card-header">Change your Profile Picture</div>
                         <div class="card-body card-block">

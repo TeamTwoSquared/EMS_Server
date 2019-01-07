@@ -2,7 +2,7 @@
         <input type="hidden" name="merchant_id" value="{{$payhere['merchant_id']}}">
         <input type="hidden" name="return_url" value="{{ config('app.url', 'ems.dv') }}/svp/ads/pay/done">
         <input type="hidden" name="cancel_url" value="{{ config('app.url', 'ems.dv') }}/svp/ads/pay/cancel">
-        <input type="hidden" name="notify_url" value="{{ config('app.url', 'ems.dv') }}/svp/ads/pay/notify">
+        <input type="hidden" name="notify_url" value="{{ config('app.url', 'ems.dv') }}/notify.php">
         <input type="hidden" name="order_id" value="{{$ad->ad_id}}">
         <input type="hidden" name="currency" value="LKR">
         <input type="hidden" class="form-control" id="country" name="country" value="Sri Lanka"/>

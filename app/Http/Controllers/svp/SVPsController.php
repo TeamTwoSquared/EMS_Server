@@ -5,6 +5,7 @@ namespace App\Http\Controllers\svp;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Intervention\Image\ImageManagerStatic as Image;
+use Illuminate\Support\Facades\Storage;
 use App\SVP;
 use App\TasksSvp;
 use App\Http\Controllers\MailController;
