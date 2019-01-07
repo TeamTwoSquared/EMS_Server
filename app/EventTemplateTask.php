@@ -13,4 +13,5 @@ class EventTemplateTask extends Model
    
     // Primary Key
     public $primaryKey = ['event_id','task_id'];
+
 }

@@ -25,9 +25,15 @@ class BookingsController extends Controller
         $booking->etime = $event->etime;
         $booking->status = 0;
         $booking->service_provider_id = $svp_id;
+        $booking->service_id = $service_id;
         $booking->save();
 
-        EventTemplateTask::where('event_id',$event_id)->where('task_id',$task_id)->delete();
+
+        $prv_ett = EventTemplateTask::where('event_id',$event_id)->where('task_id',$task_id);
+        $prev_ett_details = $prv_ett->get()[0];
+        if($prev_ett_details->booking_id) Booking::find($prev_ett_details->booking_id)->delete();
+        $prv_ett->delete();
+
         $ett = new EventTemplateTask();
         $ett->event_id = $event_id;
         $ett->task_id = $task_id;

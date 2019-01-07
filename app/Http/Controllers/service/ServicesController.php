@@ -268,7 +268,7 @@ class ServicesController extends Controller
 
     public static function getServicesExceptOne($svp_id,$service_id)
     {
-        $services = Service::where('service_provider_id',$svp_id)->whereNotIn('service_id',Array($service_id))->get();
+        $services = Service::where('service_provider_id',$svp_id)->whereNotIn('service_id',Array($service_id))->take(4)->get();
         return $services;
     }
 

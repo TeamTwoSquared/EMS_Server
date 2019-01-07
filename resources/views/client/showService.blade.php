@@ -14,7 +14,7 @@
     $service_types = ServiceTypesController::getTypes($service->service_id);
     $service_locations = ServiceLocationsController::getLocations($service->service_id);
     $Videos = ServiceVideosController::getVideos($service->service_id);
-    $other_services = ServicesController::getServicesExceptOne($service->service_provider_id,$service->service_id);
+    $other_services = ServicesController::getServicesExceptOne($service->service_provider_id,$service->service_id);//Getting 4 services
 @endphp
 
 <section class="au-breadcrumb2 pad-bottom5 pad15" data-pg-collapsed> 
@@ -128,7 +128,7 @@
                 </div>
                 @if($other_services->count()!=0)
                 <div class="row">
-                    <h4 class="font-weight-bold">Other Services of {{$svp->username}}</h4>
+                    <h4 class="font-weight-bold">Some other services of {{$svp->username}}</h4>
                 </div>
                 <div class="row">
                     @foreach($other_services as $service)

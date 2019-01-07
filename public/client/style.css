@@ -111,3 +111,9 @@
   transform: scale(1);
   background-color: rgba(0,0,0,0.4);
 }
+
+.rating-header {
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+

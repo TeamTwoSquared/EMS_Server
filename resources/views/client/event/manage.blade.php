@@ -12,6 +12,7 @@
  use App\Http\Controllers\event\TemplateImagesController;
  use App\Http\Controllers\event\EventTemplateTasksController;
  use App\Http\Controllers\event\EventsController;
+ use App\Http\Controllers\review\ReviewsController;
 
  $default_template = session()->get('default_template');
 
@@ -46,7 +47,7 @@ $default_tasks = EventTemplateTasksController::getTasks($my_event_id);
 <hr/>
 <section class="statistic statistic2 pad5" data-pg-collapsed> 
     <div class="container"> 
-        <div class="row">
+        <div class="row pl-2">
             <div class="col-md-9"> 
                 @if($is_old==0)         
                 <div class="row">
@@ -124,7 +125,10 @@ $default_tasks = EventTemplateTasksController::getTasks($my_event_id);
                                 <tr> 
                                      
                                     <th>Task</th>
-                                    <th>Service Providers</th> 
+                                    <th>Service Providers</th>
+                                    @if($my_event->date > date("Y-m-d"))
+                                        <th>Rate</th>
+                                    @endif
                                     <th></th> 
                                 </tr>                                 
                             </thead>                             
@@ -137,6 +141,21 @@ $default_tasks = EventTemplateTasksController::getTasks($my_event_id);
                                      
                                     <td><input type="text" readonly value="{{$default_task->name}}" class="form-control-plaintext name_list"/> <input type="hidden" id="task_id{{$i}}" name="default_task_id[]" value="{{$default_task->task_id}}"/></td>
                                     <td id="data{{$i}}" class="align-middle" data-pg-collapsed><a href="/client/search2/{{$default_task->task_id}}" target="_blank"><strong>Search for Service Providers</strong>&nbsp;<i class="fa fa-search"></i></a></td>
+                                    @if($my_event->date > date("Y-m-d"))
+                                        @if(ReviewsController::israted($event_id,$default_task->task_id) == 1)
+                                            <td>
+                                                <button class="btn btn-success btn-sm" id="rate" data-url="/client/review/get/{{$event_id}}/{{$default_task->task_id}}" data-toggle="modal" data-target="#rateModal" disabled>Rated</button>
+                                            </td>
+                                        @elseif(ReviewsController::israted($event_id,$default_task->task_id) == 0)
+                                            <td>
+                                                <button class="btn btn-success btn-sm" id="rate" data-url="/client/review/get/{{$event_id}}/{{$default_task->task_id}}" data-toggle="modal" data-target="#rateModal">Place</button>
+                                            </td>
+                                        @else
+                                            <td>
+                                                <button class="btn btn-success btn-sm" disabled>Place</button>
+                                            </td>
+                                        @endif
+                                    @endif
                                     <td>
                                         <div class="table-data-feature flex-row-reverse">
                                             
@@ -300,6 +319,30 @@ $default_tasks = EventTemplateTasksController::getTasks($my_event_id);
                 $('.disableLink').removeClass("disableLink");              
             });
             
+            $(document).on('click', '#rate', function(e){
+            e.preventDefault();
+            var url = $(this).data('url');
+
+            $('#dynamic-content-rate').html(''); // leave it blank before ajax call
+            $('#modal-loader-rate').show();      // load ajax loader
+
+            $.ajax({
+            url: url,
+            type: 'GET',
+            dataType: 'html'
+            })
+            .done(function(data){
+            console.log(data);  
+            $('#dynamic-content-rate').html('');    
+            $('#dynamic-content-rate').html(data); // load response 
+            $('#modal-loader-rate').hide();        // hide ajax loader   
+            })
+            .fail(function(){
+            $('#dynamic-content-rate').html('&nbsp;&nbsp;&nbsp;<i class="fas fa-info-circle"></i> Something went wrong, Please try again...');
+            $('#modal-loader-rate').hide();
+            });
+              
+            });
             
         });
         function a(obj){

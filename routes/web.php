@@ -128,7 +128,6 @@ Route::get('/svpverification/{id}/{key}', 'svp\SVPsController@doVerify');
 //Route::get('/svp/client','');
 Route::get('/svp/service','service\ServicesController@index');
 Route::get('/svp/booking','service\ServiceCustomerBookingsController@index');
-Route::get('/svp/review','review\ReviewingsController@index');
 
 
 Route::get('/svp/help',function(){
@@ -210,6 +209,8 @@ Route::post('/client/save_profile', 'client\ClientsController@save_profile');
 Route::post('/client/change_img', 'client\ClientsController@change_img');
 Route::get('/client/logout','client\ClientsController@logout');
 
+Route::get('/client/review/get/{event_id}/{task_id}','review\ReviewsController@getModal');
+Route::post('/client/review/new','review\ReviewsController@save');
 
 // Routes for side Adds.
 
