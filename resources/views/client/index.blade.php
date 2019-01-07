@@ -42,7 +42,7 @@ session()->forget('default_event');
                     @php
                     $randomImage=CatergoryImageController::getRandomImages($catergory->catergory_id)
                     @endphp
-                    <div class="col-md-4">
+                    <div class="col-md-4 mb-3">
                         <div class="hovereffect">
                             @if($randomImage->count()!=0)
                             <img src="/storage/images/catergory/{{$randomImage->imgurl}}" class="img-responsive" alt="{{$catergory->name}}"/>

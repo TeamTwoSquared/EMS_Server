@@ -135,7 +135,7 @@
                 @else
                 <div class="col-md-12 mt-5 pt-5"> 
                     <div class="row " data-pg-collapsed>
-                        <img src="https://www.carshop.co.za/Images/noresult.png" class="ml-auto mr-auto w-25 h-25"/>
+                        <img src="/images/noresult.png" class="ml-auto mr-auto w-25 h-25"/>
                     </div>
                 </div>       
                 @endif               
