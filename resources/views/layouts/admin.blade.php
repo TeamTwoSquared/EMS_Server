@@ -256,7 +256,7 @@ use Illuminate\Support\Facades\DB;
                 <div class="row"> 
                         <div class="col-md-12"> 
                             <div class="copyright"> 
-                                <strong><p>Copyright © 2018 EMS. All rights reserved.</p> </strong>
+                                <strong><p>Copyright © 2019 EMS. All rights reserved.</p> </strong>
                             </div>                                 
                         </div>                             
                     </div>                
