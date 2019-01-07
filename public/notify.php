@@ -26,15 +26,17 @@ $row = mysqli_fetch_row($result);
 $merchant_secret = $row[0]; // Replace with your Merchant Secret (Can be found on your PayHere account's Settings page)
 
 $local_md5sig = strtoupper (md5 ( $merchant_id . $order_id . $payhere_amount . $payhere_currency . $status_code . strtoupper(md5($merchant_secret)) ) );
-
 if (($local_md5sig === $md5sig) AND ($status_code == 2) ){//success
-		$pay_date = date("Y/m/d");
-		
-		$sql = "UPDATE ads SET isapprove = 1, last_payment_date=$pay_date WHERE ad_id = $order_id";
+
+		$sql = "UPDATE ads SET isapprove = 1 WHERE ad_id = '$order_id'";
 		$result = mysqli_query($connection,$sql);
+		die();
+
 }
 else{
-	$sql = "UPDATE ads SET isapprove = 3 WHERE ad_id = $order_id";
+
+	$sql = "UPDATE ads SET isapprove = 3 WHERE ad_id = '$order_id'";
 	$result = mysqli_query($connection,$sql);
+	die();
 }
 ?>
