@@ -103,17 +103,12 @@
                                         (Level {{$svp->level}})
                                         @endif
                                     </p>
-                                    <p class="card-text text-sm-center">Online Status :
-                                        @if($svp->isonline==1) 
-                                            <span class="dot dot--green"></span>
-                                        @else
-                                            <span class="dot dot--red"></span>
-                                        @endif
-                                    </p>
-                                    <button type="button" class="btn btn-light float-none text-body btn-block active asbestos-hover">Contact Me</button>
+                                    
+                                    <button type="button" onclick="showtel()" class="btn btn-light float-none text-body btn-block active asbestos-hover">Contact Me</button>
+                                    <button id = "telNo" type="button" style="display:none" class="btn float-none btn-block active text-white btn-dark">{{$svp->phone}}</button>
                                 </div>
                                 <hr>
-                                <h6>Memeber Since :
+                                <h6 class="text-sm-center">Memeber Since :
                                     @php
                                         $datetime = explode(" ",$svp->reg_date);
                                         echo $datetime[0];
@@ -132,5 +127,9 @@
         </div>     
     </section>
     <hr/>
-
+<script>
+    function showtel(){
+        $('#telNo').show();
+    }
+</script>
 @endsection
