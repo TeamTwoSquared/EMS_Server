@@ -17,74 +17,77 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700"> 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic"> 
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />  
-    </head>     
+   
+        <!-- nav bar -->
+        
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>uBeasa &mdash; Free HTML5 Template by freshdesignweb.com</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Free HTML5 Website Template by freshdesignweb.com" />
+        <meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+        <meta name="author" content="freshdesignweb.com" />
+    
+          <!-- Facebook and Twitter integration -->
+        <meta property="og:title" content=""/>
+        <meta property="og:image" content=""/>
+        <meta property="og:url" content=""/>
+        <meta property="og:site_name" content=""/>
+        <meta property="og:description" content=""/>
+        <meta name="twitter:title" content="" />
+        <meta name="twitter:image" content="" />
+        <meta name="twitter:url" content="" />
+        <meta name="twitter:card" content="" />
+    
+        <!-- <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet"> -->
+        
+        <!-- Animate.css -->
+        <link rel="stylesheet" href="/home/css/animate.css">
+        <!-- Icomoon Icon Fonts-->
+        <link rel="stylesheet" href="/home/css/icomoon.css">
+        <!-- Themify Icons-->
+        <link rel="stylesheet" href="/home/css/themify-icons.css">
+        <!-- Bootstrap  -->
+        <link rel="stylesheet" href="/home/css/bootstrap.css">
+        <!-- Magnific Popup -->
+        <link rel="stylesheet" href="/home/css/magnific-popup.css">
+        <!-- Owl Carousel  -->
+        <link rel="stylesheet" href="/home/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="/home/css/owl.theme.default.min.css">
+        <!-- Flexslider -->
+        <link rel="stylesheet" href="/home/css/flexslider.css">
+        <!-- Theme style  -->
+        <link rel="stylesheet" href="/home/css/style.css">
+    
+        <!-- Modernizr JS -->
+        <script src="/home/js/modernizr-2.6.2.min.js"></script>
+        <!-- FOR IE9 below -->
+        <!--[if lt IE 9]>
+        <script src="js/respond.min.js"></script>
+        <![endif]-->
+    
+        </head>
     <body> 
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark"> 
-            <a href="#top"> 
-                <a class="navbar-brand" href="/">EMS</a> 
-            </a>             
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"> 
-                <span class="navbar-toggler-icon"></span> 
-            </button>             
-            <div class="collapse navbar-collapse" id="navbarCollapse"> 
-                <ul class="navbar-nav mr-auto"> 
-                    <li class="nav-item active"> 
-                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a> 
-                    </li>                     
-                    <li class="nav-item"> 
-                        <a class="nav-link" href="/aboutus">About us</a> 
-                    </li>                     
-                    <li class="nav-item"> 
-                        <a class="nav-link" href="/contactus">Contact us</a> 
-                    </li>                     
-                </ul>                 
-                <form class="form-inline mt-2 mt-md-0"> 
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"> 
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>                     
-                </form>                 
-            </div>             
-        </nav>         
-        <div id="myCarousel" class="carousel slide" data-ride="carousel"> 
-            <ol class="carousel-indicators"> 
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>                 
-                <li data-target="#myCarousel" data-slide-to="1"></li>                 
-                <li data-target="#myCarousel" data-slide-to="2"></li>                 
-            </ol>             
-            <div class="carousel-inner"> 
-                <div class="carousel-item active"> 
-                    <img class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide"> 
-                    <div class="container"> 
-                        <div class="carousel-caption d-none d-md-block text-left"> 
-                            <h1>A Single Platform to Meet Your Customers</h1> 
-                            <p>EMS is the best place to meet your customer and have a exponential growth of your sales.</p> 
-                            <p><a class="btn btn-lg btn-primary" href="/svp/register" role="button">Sign up today</a></p> 
-                        </div>                         
-                    </div>                     
-                </div>                 
-                <div class="carousel-item"> 
-                    <img class="second-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide"> 
-                    <div class="container"> 
-                        <div class="carousel-caption d-none d-md-block"> 
-                            <h1>Collaborative Event Oraganization</h1> 
-                            <p>Invite your friends, family members to join with you in event organizing.</p> 
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign Up Today</a></p> 
-                        </div>                         
-                    </div>                     
-                </div>                 
-                <div class="carousel-item"> 
-                    <img class="third-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide"> 
-                    <div class="container"> 
-                        <div class="carousel-caption d-none d-md-block text-right"> 
-                            <h1>Wide Range of Event Templates</h1> 
-                            <p>There are wide range of event templates so that you can easily pick a template suitable to your task. Lets take a look at our template gallery.</p> 
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p> 
-                        </div>                         
-                    </div>                     
-                </div>                 
-            </div>             
-            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> 
-            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> 
-        </div>         
+        
+        <nav class="ubea-nav" role="navigation">
+            <div class="ubea-container">
+                <div class="row">
+                    <div class="col-sm-2 col-xs-12">
+                        <div id="ubea-logo"><a href="index.html">EMS <em>.</em></a></div>
+                    </div>
+                    <div class="col-xs-10 text-right menu-1 main-nav">
+                        <ul>
+                            <li class="active"><a href="/index.html" data-nav-section="home">Home</a></li>
+                            <li><a href="/index.html" data-nav-section="about">About us</a></li>
+                            <li><a href="/index.html" data-nav-section="contact">Contact US</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </nav>
+                           
+            
         <!-- Marketing messaging and featurettes
     ================================================== -->         
         <!-- Wrap the rest of the page in another container to center all the content. -->         
@@ -92,13 +95,13 @@
             <!-- Three columns of text below the carousel -->             
             <div class="row"> 
                 <div class="col-lg-4 col-xl-6"> 
-                    <img class="rounded-circle" alt="Client Image" width="140" height="140" src="images/Clientss.jpg"> 
+                    <img class="rounded-circle" alt="Client Image" width="140" height="140" src="images/HAPPY-CLIENTS.jpg"> 
                     <h2>Client</h2> 
                     <a class="btn btn-primary btn-lg btn-block" href="/client/login">Login</a> 
                     <a class="btn btn-secondary btn-lg btn-block" href="/client/register">Register</a> 
                 </div>                 
                 <div class="col-lg-4 col-xl-6"> 
-                    <img class="rounded-circle" alt="Service Provider image" width="140" height="140" src="images/service provider2.png"> 
+                    <img class="rounded-circle" alt="Service Provider image" width="140" height="140" src="images/service provider.jpg"> 
                     <h2>Service provider</h2> 
                     <a class="btn btn-primary btn-lg btn-block" href="/svp/login">Login</a> 
                     <a class="btn btn-secondary btn-lg btn-block" href="/svp/register">Register</a> 
@@ -109,37 +112,7 @@
             </div>             
             <!-- /.row -->             
             <!-- START THE FEATURETTES -->             
-            <hr class="featurette-divider"> 
-            <div class="row featurette"> 
-                <div class="col-md-7"> 
-                    <h2 class="featurette-heading">Vast range of pre-defined templates</h2> 
-                    <p class="lead">Our system users can manage their event using our pre-defined templates in an easy and effiecient way. Even users without having any knowledge about event planing can also use our system to manage their events.</p> 
-                    <p class="lead">Also you can edit or create&nbsp;</p> 
-                </div>                 
-                <div class="col-md-5"> 
-                    <img class="featurette-image img-fluid mx-auto" style="width: 500px; height: 500px;" src="images/party template.jpg" data-holder-rendered="true" alt="Event template image"> 
-                </div>                 
-            </div>             
-            <hr class="featurette-divider"> 
-            <div class="row featurette"> 
-                <div class="col-md-7 order-md-2"> 
-                    <h2 class="featurette-heading">Everything you need at your at your finger tips</h2> 
-                    <p class="lead">Our system has provide clients task based searching option where you can find relevent service providers for relevent tasks</p> 
-                </div>                 
-                <div class="col-md-5 order-md-1"> 
-                    <img class="featurette-image img-fluid mx-auto" src="images/happy user.jpg" data-holder-rendered="true" style="width: 500px; height: 500px;" alt="Searching option image"> 
-                </div>                 
-            </div>             
-            <hr class="featurette-divider"> 
-            <div class="row featurette"> 
-                <div class="col-md-7"> 
-                    <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2> 
-                    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p> 
-                </div>                 
-                <div class="col-md-5"> 
-                    <img class="featurette-image img-fluid mx-auto" src="images/chattingpeople.jpg" data-holder-rendered="true" style="width: 500px; height: 500px;" alt="Chatting people image"> 
-                </div>                 
-            </div>             
+               
             <hr class="featurette-divider"> 
             <!-- /END THE FEATURETTES -->             
             <!-- FOOTER -->             

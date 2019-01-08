@@ -22,8 +22,17 @@ Route::get('/client/callback', 'SocialAuthGoogleController@callback');
 
 Route::get('/test2/{id}', 'svp\SVPsController@sendActivationLink');
 Route::get('/', function(){
+    return view('home');
+});
+Route::get('/login',function(){
     return view('index');
 });
+
+
+Route::get('/index.html',function(){
+    return view('home');
+});
+
 Route::get('/aboutus',  function(){
     return view('aboutus');
 });
