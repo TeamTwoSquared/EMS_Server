@@ -266,4 +266,9 @@ img{ max-width:100%;}
   padding: 5px 10px 5px 12px;
   width: 100%;  
  }
+ .btn.btn-outline-secondary.border-left-0 {
+  color: black;
+  margin-top: 0px;
+  margin-bottom: 0px;  
+ }
 
