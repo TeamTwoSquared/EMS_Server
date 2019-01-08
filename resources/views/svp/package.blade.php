@@ -37,9 +37,10 @@ use Illuminate\Support\Facades\DB;
             <main role="main">
                 <div class="buttn" align="right">
                     <a href="/svp/addpackageService">
-                        <button type="button" class="btn btn-success">+ Add New Service Package</button>
+                        <button type="button" class="btn btn-success">+ Add new service package</button>
                     </a>
                 </div>
+                <center><h3><i>Package services</i></h3></center>
                 <div class="album py-5 bg-light">
                     <div class="container">
                         @if($packageService->count() == 0)
@@ -51,7 +52,7 @@ use Illuminate\Support\Facades\DB;
 
                                 <a href='/svp/packageService/{{$package_info->package_id}}'>
                                     <div class="col-md-4">
-                                        <div class="card mb-4 box-shadow">
+                                        <div class="card mb-4 box-shadow" >
 
                                             @php
                                             //   $packageImg=servicePackage::where('package_id',$package_info->package_id)->get();
@@ -75,11 +76,16 @@ use Illuminate\Support\Facades\DB;
                                                                 </a>
                                                                 <a href="/svp/EditPackage/{{$package_info->package_id}}">
                                                                     <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                                                </a>
-                                                                <a href="/svp/DeletePackage/{{$package_info->package_id}}">
-                                                                    <button type="button" class="btn btn-sm btn-outline-secondary">Delete</button>
-                                                                </a>
-                                                            </div>
+                                                                </a> 
+                                                                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="deleteMe({{$package_info->package_id}})">Delete</button>
+                                                                    <script>
+                                                                            function deleteMe(id) {
+                                                                                if (confirm("Are you sure you want to delete package!")) {
+                                                                                    window.location.replace("/svp/DeletePackage/"+id);
+                                                                                } 
+                                                                            }
+                                                                    </script>
+                                                                </div>
                                                         </div>
                                                  
                                                 </div>
@@ -87,7 +93,6 @@ use Illuminate\Support\Facades\DB;
                                     </div>
                                 </a>
                             @endforeach
-
                           </div>
                         @endif
 
@@ -100,6 +105,9 @@ use Illuminate\Support\Facades\DB;
             <script src="assets/js/jquery.min.js"></script>
             <script src="assets/js/popper.js"></script>
             <script src="bootstrap/js/bootstrap.min.js"></script>
+
+           
+
             </body>
             </html>
 

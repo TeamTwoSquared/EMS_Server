@@ -77,6 +77,50 @@
                     border-radius: 4px;
                     box-sizing: border-box;
                 }
+
+                /*style sheet for image delete*/
+
+
+                .con {
+                    position: relative;
+                    width: 100%;
+                    }
+
+                    .image {
+                    opacity: 1;
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                    transition: .5s ease;
+                    backface-visibility: hidden;
+                    }
+
+                    .middle {
+                    transition: .5s ease;
+                    opacity: 0;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    -ms-transform: translate(-50%, -50%);
+                    text-align: center;
+                    }
+
+                    .con:hover .image {
+                    opacity: 0.3;
+                    }
+
+                    .con:hover .middle {
+                    opacity: 1;
+                    }
+
+                    .text {
+                    background-color: #4CAF50;
+                    color: white;
+                    font-size: 16px;
+                    padding: 16px 32px;
+                    }
+
         
             </style>
 </head>
@@ -86,7 +130,7 @@
         <div class="row" data-pg-collapsed>
             <div class="col-lg-9">
                 <div class="card">
-                    <div class="card-header">Change your Account Details</div>
+                    <div class="card-header"><center><h3>Change the package details</h3></center></div>
                     <div class="card-body card-block">
                             <div class="form-group">
                                 <div class="input-group">
@@ -99,7 +143,7 @@
                             <div class="form-group">
                                 <div class="input-group">
                                     <div class="input-group-addon">
-                                        <i class="glyphicon glyphicon-folder-open">Package Name</i>
+                                        <i class="glyphicon glyphicon-folder-open">Package name</i>
                                     </div>
                                     <input type="text"  name="name" value="{{$package_info[0]->name}}" class="form-control">
                                 </div>
@@ -107,9 +151,9 @@
                             <div class="form-group">
                                     <div class="input-group">
                                         <div class="input-group-addon">
-                                            <i class="glyphicon glyphicon-folder-open">Package Prices</i>
+                                            <i class="glyphicon glyphicon-folder-open">Package prices(Rs.)-Optional</i>
                                         </div>
-                                        <input type="number" name="price" value="{{$package_info[0]->price}}" class="form-control">
+                                        <input type="number" name="price" value="{{$package_info[0]->price}}" min=0 class="form-control">
                                     </div>
                             </div>
                             <div class="form-group">
@@ -131,14 +175,19 @@
         <div class="row" data-pg-collapsed>
             <div class="col-lg-9">
               <div class="card">
-                <div class="card-header">Exsisting Package Image </small></div>
+                <div class="card-header">Exsisting package image </small></div>
                 @if(($package_info[0]->imgurl)!=null)
                         <div style="display:none" > {{$imageId= 0}}</div>
                                 <div class="col-md-4" id="{{$imageId+=1}}" onclick="hideme({{$imageId}}) ">
                                     <div class="card mb-4 box-shadow" onclick="showme({{$imageId}})">
                                         <label class="contain">
-                                            <input type="checkbox" id=" selected_images" name="picture[]" value="{{$package_info[0]->imgurl}}"><img src="\storage\images\services\{{$package_info[0]->imgurl}}"/>
+                                          <div class="con">
+                                            <input type="checkbox" id=" selected_images" name="picture[]" value="{{$package_info[0]->imgurl}}"><img src="\storage\images\services\{{$package_info[0]->imgurl}}" class="image"/>
+                                            <div class="middle">
+                                                    <div class="text">Delete</div>
+                                            </div>
                                             <span class="checkmark" style="display: none;"></span>
+                                          </div>
                                         </label>
                                     </div>
                                 </div>
@@ -152,7 +201,7 @@
         <div class="row" data-pg-collapsed>
                 <div class="col-lg-9">
                     <div class="card">
-                        <div class="card-header">Change The Package Image<small>(Only One Image Is Allowed !)</small></div>
+                        <div class="card-header">Change the package image<small>(Only one image is allowed !)</small></div>
                         <div class="card-body card-block">
                                 <div class="form-actions form-group">
             
@@ -169,7 +218,7 @@
         <div class="row" data-pg-collapsed>
                 <div class="col-lg-9">
                     <div class="card">
-                        <div class="card-header">Package Locations</div>
+                        <div class="card-header">Branches</div>
                         <div class="card-body card-block">
                                 
                                 @if(count($package_locations)!=null)
@@ -229,7 +278,7 @@
         <div class="row" data-pg-collapsed>
                 <div class="col-lg-9">
                     <div class="card">
-                        <div class="card-header">Package Types</div>
+                        <div class="card-header">Package types</div>
                         <div class="card-body card-block">
                             @if(count($package_types)!=null)
                                 <div style="display:none" > {{$serviceTypeId= 13}}</div>
@@ -258,7 +307,7 @@
                         <div class="card-body card-block">
                                 <div class="input-group">
                                         <div class="input-group-addon">
-                                            <i class="glyphicon glyphicon-folder-open">Package Video URL</i>
+                                            <i class="glyphicon glyphicon-folder-open">Package video URL</i>
                                         </div>
                                         <input type="text" name="videorul" value="{{$package_info[0]->videourl}}" class="form-control">
                                 </div>
@@ -266,7 +315,7 @@
                         <div class="card-body card-block">
                                 <div class="input-group">
                                         <div class="input-group-addon">
-                                            <i class="glyphicon glyphicon-folder-open">Service Provider ID</i>
+                                            <i class="glyphicon glyphicon-folder-open">Service provider ID</i>
                                         </div>
                                         <label class="form-control">{{$package_info[0]->service_provider_id}}</label>
                                 </div>
@@ -282,7 +331,7 @@
                 <div class="col-lg-9">
                     <center>
                         <div class="form-actions form-group">
-                        <button type="submit" class="btn btn-success btn-sm" style="margin:auto;display:block">Update Service Package</button>
+                        <button type="submit" class="btn btn-success btn-sm" style="margin:auto;display:block">Update service package</button>
                     </center>
                     </div>
                 </div>

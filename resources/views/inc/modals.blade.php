@@ -82,3 +82,32 @@
       </div>
     </div>
   </div>
+<!-- svp delete account model-->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="exampleModalLabel">Delete Account</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          
+          <div class="modal-body">
+              <div>
+                  <h6>Are you sure do you want to delete the account ?</h6>
+              </div>
+            <form action="/svp/account/delete/{{session()->get('svp_id')}}" method='post'>
+              {{ csrf_field() }}
+                  <div class="form-group">
+                    <label for="recipient-name" class="col-form-label" ></label>
+                    <input type="password" class="form-control" name='pass' placeholder="Enter your password">
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button  class="btn btn-danger">Delete account</button>
+                </div>
+          </form>
+        </div>
+      </div>
+    </div>

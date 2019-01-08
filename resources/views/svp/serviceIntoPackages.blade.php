@@ -19,16 +19,16 @@ use App\ServiceImage;
             <main role="main">
                 <div class="buttn" align="right">
                 <a href="/svp/package/addServices/{{$package_id}}">
-                        <button type="button" class="btn btn-success">+ Add New Service</button>
+                        <button type="button" class="btn btn-success">+ Add new service</button>
                     </a>
                     <a href="/svp/package/addExsistingServices/{{$package_id}}">
-                        <button type="button" class="btn btn-success">+ Add Exsisting Service</button>
+                        <button type="button" class="btn btn-success">+ Add exsisting service</button>
                     </a>
                 </div>
                
                 <div class="album py-5 bg-light">
                     <div class="container">
-                            @if($package_service_info->count() == 0)
+                        @if($package_service_info->count() == 0)
                             <center><h2>No Services added yet !</h2></center>
                         @else
                          <div class="row">

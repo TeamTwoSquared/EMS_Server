@@ -27,11 +27,11 @@ class ContactUsController extends Controller
 
         $contactus = new ContactUs();
 
-        $contactus->Name = $request->name;
-        $contactus->Email = $request->email;
-        $contactus->Phone = $request->phone;
-        $contactus->Message = $request->message;
+        $contactus->name = $request->name;
+        $contactus->email = $request->email;
+        $contactus->tel = $request->phone;
+        $contactus->messege = $request->message;
         $contactus->save();
-        return redirect('/contactus')->with('success','Feedback sent!');
+        return redirect('/')->with('success','Feedback sent!');
     }
 }    

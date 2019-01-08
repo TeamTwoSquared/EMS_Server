@@ -56,7 +56,7 @@
                 <div class="col-lg-9">
                     <center>
                         <div class="form-actions form-group">
-                        <button type="submit" class="btn btn-success btn-sm" style="margin:auto;display:block">Add Your New Service</button>
+                        <button type="submit" class="btn btn-success btn-sm" style="margin:auto;display:block">Send support request</button>
                     </center>
                     </div>
                 </div>

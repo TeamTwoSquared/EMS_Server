@@ -8,7 +8,7 @@
 <div class="row" data-pg-collapsed>
     <div class="col-lg-9">
         <div class="card">
-            <div class="card-header">Package Informations</div>
+            <div class="card-header"><center><h3>Package informations</h3></center></div>
             <div class="card-body card-block">
                     <div class="form-group">
                         <div class="input-group">
@@ -21,7 +21,7 @@
                     <div class="form-group">
                         <div class="input-group">
                             <div class="input-group-addon">
-                                <i >Package Name</i>
+                                <i >Package name</i>
                             </div>
                             <label class="form-control">{{$package_info[0]->name}}</label>
                         </div>
@@ -29,7 +29,7 @@
                     <div class="form-group">
                         <div class="input-group">
                             <div class="input-group-addon">
-                                <i >Package Prices</i>
+                                <i >Package prices(Rs)</i>
                             </div>
                             <label class="form-control">{{$package_info[0]->price}}</label>
                         </div>
@@ -42,7 +42,7 @@
 <div class="row" data-pg-collapsed>
     <div class="col-lg-9">
         <div class="card">
-            <div class="card-header">Service Package Image</div>
+            <div class="card-header">Service package image</div>
             <div class="card-body card-block">
                     <div class="form-actions form-group">
                              <div class="col-md-4">
@@ -62,7 +62,7 @@
                             <div class="form-group">
                                 <div class="input-group">
                                     <div class="input-group-addon">
-                                        <i >Package Description</i>
+                                        <i >Package description</i>
                                     </div>
                                     <label class="form-control">{{$package_info[0]->description}}</label>
                                 </div>
@@ -71,7 +71,7 @@
                             <div class="form-group">
                                 <div class="input-group">
                                     <div class="input-group-addon">
-                                        <i >Package Video URL</i>
+                                        <i >Package video URL</i>
                                     </div>
                                         <label class="form-control">{{$package_info[0]->videourl}}</label>
                                 </div>
@@ -79,7 +79,7 @@
                             <div class="form-group">
                                 <div class="input-group">
                                     <div class="input-group-addon">
-                                        <i >Service Provider ID</i>
+                                        <i >Service provider ID</i>
                                     </div>
                                     <label class="form-control">{{$package_info[0]->service_provider_id}}</label>
                                 </div>
@@ -110,7 +110,7 @@
                             <div class="form-group">
                                 <div class="input-group">
                                     <div class="input-group-addon">
-                                        <i >Package Locations</i>
+                                        <i >Branches</i>
                                     </div>
                                         <label class="form-control">
                                             @foreach($package_locations as $package_location)
@@ -122,7 +122,7 @@
                             <div class="form-group">
                                 <div class="input-group">
                                     <div class="input-group-addon">
-                                        <i >Package Types</i>
+                                        <i >Package types</i>
                                     </div>
                                     <label class="form-control">
                                             @foreach($package_types as $package_type)

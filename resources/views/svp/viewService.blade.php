@@ -19,22 +19,22 @@
         <div class="container">
             <ul class="list-group">
                 <li class="list-group-item">Service ID           :<b>{{$service_info[0]->service_id}}</b></li>
-                <li class="list-group-item">Service Name         :{{$service_info[0]->name}}</li>
-                <li class="list-group-item">About The Service    :{{$service_info[0]->description}}</li>
-                <li class="list-group-item">Price of the Service :{{$service_info[0]->price}}</li>
-                <li class="list-group-item">Service Provider ID  :{{$service_info[0]->service_provider_id}}</li>
+                <li class="list-group-item">Service name         :{{$service_info[0]->name}}</li>
+                <li class="list-group-item">About the service    :{{$service_info[0]->description}}</li>
+                <li class="list-group-item">Price of the service :{{$service_info[0]->price}}</li>
+                <li class="list-group-item">Service provider ID  :{{$service_info[0]->service_provider_id}}</li>
                 @if(count($service_videos)==0)
-                    <li class="list-group-item">Service Video URL  : No URL </li>
+                    <li class="list-group-item">Service video URL  : No URL </li>
                 @else
-                    <li class="list-group-item">Service Video URL  :{{$service_videos[0]->videourl}}</li>
+                    <li class="list-group-item">Service video URL  :{{$service_videos[0]->videourl}}</li>
                 @endif
 
-                <li class="list-group-item">Service Locations     :
+                <li class="list-group-item">Branches     :
                     @foreach($service_locations as $serviceLocation)
                         <span class="badge badge-pill badge-light">{{$serviceLocation->location}}</span>
                     @endforeach
                 </li>
-                <li class="list-group-item">Service Types    :
+                <li class="list-group-item">Service types    :
                     @foreach($service_types as $serviceType)
                         <span class="badge badge-pill badge-light">{{$serviceType->type}}</span>
                     @endforeach

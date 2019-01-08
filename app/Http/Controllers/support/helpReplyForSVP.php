@@ -94,10 +94,20 @@ class helpReplyForSVP extends Controller
         return view('admin.client.allNotificationForSVP')->with('notfication_title',$newHelpRequest)->with('help_comment',$newHelpRequestComment);
     }
 
+    public function notifications(){
+        $newHelpRequest = DB::table('notifications')->where('type',1)->where('to_whome',3)->where('service_provider_id',session()->get('svp_id'))->get();
+        $newHelpRequestComment = DB::table('notifications')->where('type',2)->where('to_whome',3)->where('service_provider_id',session()->get('svp_id'))->get();
+       //  dd($newHelpRequestComment);
+        return view('admin.client.allNotificationForSVP')->with('notfication_title',$newHelpRequest)->with('help_comment',$newHelpRequestComment);
+    }
 
 
     public function show($id){
         
+        $readNotification=Notification::find($id);
+        $readNotification->is_read=1;
+        $readNotification->save();
+
         $notificationInfo=Notification::where('notification_id',$id)->get();
 
        // dd($notificationInfo[0]->support_request_id);

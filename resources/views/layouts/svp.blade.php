@@ -159,7 +159,7 @@ $svp=SVPsController::getSVP();
                                             <!-- end support center notificarion-->
                                      
                                             <div class="notifi__footer"> 
-                                                <a href="#">All notifications</a> 
+                                                <a>All notifications</a> 
                                             </div>                                     
                                         </div>                                 
                                     </div>                             

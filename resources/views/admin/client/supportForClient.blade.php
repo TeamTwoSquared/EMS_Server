@@ -4,6 +4,32 @@
  use App\helpModel;
  use Illuminate\Support\Facades\DB;
 @endphp
+
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
+        <meta charset="utf-8"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+        <meta name="description" content=""> 
+        <meta name="author" content=""> 
+        <title>EMS</title>         
+        <!-- Bootstrap core CSS -->         
+        <link href="/bootstrap/css/bootstrap.css" rel="stylesheet"> 
+        <!-- Custom styles for this template -->         
+        <link href="/jumbotron.css" rel="stylesheet"> 
+        <link rel="stylesheet" href="/components/pg.blocks/css/blocks.css"> 
+        <link rel="stylesheet" href="/components/pg.blocks/css/plugins.css"> 
+        <link rel="stylesheet" href="/components/pg.blocks/css/style-library-1.css"> 
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700"> 
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic"> 
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+        <!-- drop dawn stylesheets-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    </head>     
+    <body>   
         <div class="container"> 
             <!-- Example row of columns -->             
             <div class="col-sm-offset-1 col-sm-12"> 
@@ -108,5 +134,6 @@
         <!--drop down scipts -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-   
+    </body>     
+</html>
 @endsection

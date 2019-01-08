@@ -91,34 +91,76 @@
         }
 
         /*style sheet for image delete*/
+
+
+            .con {
+            position: relative;
+            width: 100%;
+            }
+
+            .image {
+            opacity: 1;
+            display: block;
+            width: 100%;
+            height: auto;
+            transition: .5s ease;
+            backface-visibility: hidden;
+            }
+
+            .middle {
+            transition: .5s ease;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            text-align: center;
+            }
+
+            .con:hover .image {
+            opacity: 0.3;
+            }
+
+            .con:hover .middle {
+            opacity: 1;
+            }
+
+            .text {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            padding: 16px 32px;
+            }
+
     </style>
 </head>
 
 <div role="main">
     <form class="album py-5 bg-light" method="POST" action="/svp/updateService" data-pg-collapsed enctype="multipart/form-data">
         <div class="container">
-
+                <center><h3><i>Change the service details</i></h3></center>
                 {{ csrf_field() }}
 
                 <div class="form-group">
                     <input type="number" class="form-control" name='serviceID' id="formGroupExampleInput"  value="{{$serviceID}}" style="display: none;" />
                 </div>
                 <div class="form-group">
-                    <label class="col-form-label" for="formGroupExampleInput">Service Name </label>
+                    <label class="col-form-label" for="formGroupExampleInput">Service name </label>
                     <input type="text" class="form-control" name='sName' id="formGroupExampleInput"  value="{{$service_info->name}}"/>
                 </div>
                 <div class="form-group">
-                    <label class="col-form-label" for="formGroupExampleInput2">Service Price</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput2" name='price' placeholder="" value="{{$service_info->price}}"/>
+                    <label class="col-form-label" for="formGroupExampleInput2">Service price(Rs)-Optional</label>
+                    <input type="number" class="form-control" id="formGroupExampleInput2" name='price'  min=0 placeholder="" value="{{$service_info->price}}"/>
                 </div>
                 <div class="form-group">
-                    <label class="col-form-label" for="formGroupExampleInput2">About The Service</label>
+                    <label class="col-form-label" for="formGroupExampleInput2">About the service</label>
                     <input type="text" class="form-control" id="formGroupExampleInput2" name='description' placeholder="" value="{{$service_info->description}}"/>
                 </div>
 <!-- Locations   -->
 
                 <div class="form-group">
-                    <label class="col-form-label" for="formGroupExampleInput2">Service Locations</label><br>
+                    <label class="col-form-label" for="formGroupExampleInput2">Branches</label><br>
 
                     @if(count($service_locations)!=null)
                         <div style="display:none" > {{$locationId= 1}}</div>
@@ -141,7 +183,7 @@
 <!-- Keywords -->
 
                 <div class="form-group">
-                    <label class="col-form-label" for="formGroupExampleInput2">Service Keywords</label><br>
+                    <label class="col-form-label" for="formGroupExampleInput2">Service keywords</label><br>
 
                     @if(count($service_keywords)!=null)
                         <div style="display:none" > {{$serviceKeywordId= 7}}</div>
@@ -164,7 +206,7 @@
 
 <!-- types -->
                 <div class="form-group">
-                    <label class="col-form-label" for="formGroupExampleInput2">Service Types</label><br>
+                    <label class="col-form-label" for="formGroupExampleInput2">Service types</label><br>
                     @if(count($service_types)!=null)
                         <div style="display:none" > {{$serviceTypeId= 13}}</div>
                         @foreach($service_types as $service_type)
@@ -198,9 +240,13 @@
                                     <div class="col-md-4" id="{{$imageId+=1}}"  onclick="hideme({{$imageId}})">
                                         <div class="card mb-4 box-shadow" >
                                             <label class="contain">
-                                                <input type="checkbox" id=" selected_images" name="picture[]" value="{{$serviceImage->imgurl}}"><img src="\storage\images\services\{{$serviceImage->imgurl}}" onmouseover= "deleteMe({{$imageId}})"/>
-                        
-                                                <span class="checkmark" style="display: none;"></span>
+                                                <div class="con">
+                                                    <input type="checkbox" id=" selected_images" name="picture[]" value="{{$serviceImage->imgurl}}"><img src="\storage\images\services\{{$serviceImage->imgurl}}" class="image" onmouseover= "deleteMe({{$imageId}})"/>
+                                                    <div class="middle">
+                                                            <div class="text">Delete</div>
+                                                    </div>
+                                                   <span class="checkmark" style="display: none;"></span>
+                                                </div>
                                             </label>
                                         </div>
                                     </div>
@@ -213,7 +259,7 @@
                     <div class="row" >
                         <div class="col-lg-9">
                             <div class="card">
-                            <div class="card-header">Choose Your New Images -<small><?php 
+                            <div class="card-header">Choose your new images -<small><?php 
                                                                                 if($service_img==0){
                                                                                     echo("(Maximumm 6 Photos Can Upload)");
                                                                                 } 
@@ -237,7 +283,7 @@
                 </div>
 
                 <div>
-                    <button type="submit" class="btn btn-success" style="margin:auto;display:block">Update Your Service</button>
+                        <button type="submit" class="btn btn-success" style="margin:auto;display:block">Update your service</button>
                 </div>
 
         </div>

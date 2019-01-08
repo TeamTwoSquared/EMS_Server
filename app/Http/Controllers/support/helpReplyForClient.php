@@ -21,6 +21,10 @@ class helpReplyForClient extends Controller
     }
 
     public function show($id){
+
+        $readNotification=Notification::find($id);
+        $readNotification->is_read=1;
+        $readNotification->save();
         
         $notificationInfo=Notification::where('notification_id',$id)->get();
 

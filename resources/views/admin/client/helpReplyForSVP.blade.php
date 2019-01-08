@@ -13,7 +13,7 @@
         <div>
             <div class="row" data-pg-collapsed>
                 <div class="col-md-1" data-pg-collapsed>
-                    <img  140x140 class="img-circle img-responsive" src="\storage\images\services\{{$svp_info[0]->profilepic}}">
+                    <img  140x140 class="img-circle img-responsive" src="\storage\images\profile\{{$svp_info[0]->profilepic}}">
                 </div>
                 <div class="col-md-11" data-pg-collapsed>
                     <h4>{{$svp_info[0]->name}}</h4>              
@@ -65,11 +65,11 @@
 
                                 @if(($cmt->from_whome)==1)
                                     <div class="col-md-1" data-pg-collapsed>
-                                        <img  140x140 class="img-circle img-responsive" src="\storage\images\services\admin.png">
+                                        <img  140x140 class="img-circle img-responsive" src="\storage\images\profile\admin.jpg">
                                     </div>
                                 @else
                                     <div class="col-md-1" data-pg-collapsed>
-                                        <img  140x140 class="img-circle img-responsive" src="\storage\images\services\{{$svp_info[0]->profilepic}}">
+                                        <img  140x140 class="img-circle img-responsive" src="\storage\images\profile\{{$svp_info[0]->profilepic}}">
                                     </div>
                                 @endif
 
@@ -112,7 +112,7 @@
 
     <div class="row"  style="border-left:solid 20px white ; border-left:solid 20px white" data-pg-collapsed>
                     <div class="col-md-1" data-pg-collapsed>
-                        <img  140x140 class="img-circle img-responsive" src="\storage\images\services\{{$svp_info[0]->profilepic}}">
+                        <img  140x140 class="img-circle img-responsive" src="\storage\images\profile\{{$svp_info[0]->profilepic}}">
                     </div>
                     <div class="col-md-11" data-pg-collapsed>
                         <h4>{{$svp_info[0]->name}}</h4>              

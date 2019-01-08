@@ -31,9 +31,10 @@ use App\ServiceImage;
             <main role="main">
                 <div class="buttn" align="right">
                     <a href="/svp/addServices">
-                        <button type="button" class="btn btn-success">+ Add New Service</button>
+                        <button type="button" class="btn btn-success">+ Add new service</button>
                     </a>
                 </div>
+                <center><h3><i>Single services</i></h3></center>
                 <div class="album py-5 bg-light">
                     <div class="container">
                         @if($svpServices->count() == 0)
@@ -68,9 +69,15 @@ use App\ServiceImage;
                                                              <a href="/svp/EditService/{{$svpService->service_id}}">
                                                                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
                                                              </a>
-                                                             <a href="/svp/DeleteService/{{$svpService->service_id}}">
-                                                                 <button type="button" class="btn btn-sm btn-outline-secondary">Delete</button>
-                                                             </a>
+                                                             
+                                                             <button type="button" class="btn btn-sm btn-outline-secondary" onclick="deleteMe({{$svpService->service_id}})">Delete</button>
+                                                                    <script>
+                                                                            function deleteMe(id) {
+                                                                                if (confirm("Are you sure you want to delete this package !")) {
+                                                                                    window.location.replace("/svp/DeleteService/"+id);
+                                                                                } 
+                                                                            }
+                                                                    </script>
                                                         </div>
                                                     </div>
                                                 </center>
@@ -96,4 +103,7 @@ use App\ServiceImage;
             </html>
 
 @endsection
+
+
+
 

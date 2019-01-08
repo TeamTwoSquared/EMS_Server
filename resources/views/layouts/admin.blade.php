@@ -173,10 +173,10 @@ use Illuminate\Support\Facades\DB;
                                             $numOfAllNotificationforHelp=($numOfNewNotifications+$newCommentNotificationForHelp);
                                         ?>
                                             <div class="noti__item js-item-menu"> 
-                                                <i class="zmdi zmdi-notifications"></i> 
+                                                <i class="zmdi zmdi-notifications" onclick="clickMe()"></i>  
                                         
                                                @if($numOfNewNotifications !=0)
-                                                    <span class='quantity'>{{$numOfNewNotifications}}</span> 
+                                               <span class='quantity' id = "notiCount">{{$numOfNewNotifications}}</span> 
                                                             <div class='notifi-dropdown js-dropdown'> 
                                                                 <div class='notifi__title'> 
                                                                     <p>You have {{$numOfNewNotifications}} Notifications</p> 
@@ -186,6 +186,7 @@ use Illuminate\Support\Facades\DB;
                                                 @else
                                                     <div class='notifi-dropdown js-dropdown'> 
                                                             <div class='notifi__title'>  
+                                                                    <p>No Notifications</p>
                                                     </div>
                                                 @endif
                                         

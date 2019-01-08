@@ -23,6 +23,10 @@ class helpByAdmin extends Controller
     }
 
     public function show($id){
+
+        $readNotification=Notification::find($id);
+        $readNotification->is_read=1;
+        $readNotification->save();
         
         $notificationInfo=Notification::where('notification_id',$id)->get();
 
@@ -104,5 +108,12 @@ class helpByAdmin extends Controller
            return redirect('/admin/notification/'.$getNotificationInfo[0]->notification_id);
     
 
+    }
+
+    public function isRead($id){
+        $readNotification=Notification::find($id);
+        $readNotification->is_read=1;
+        $readNotification->save();
+       
     }
 }

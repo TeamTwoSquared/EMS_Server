@@ -16,6 +16,7 @@ use App\ServiceImage;
 use App\ServiceVideo;
 use App\Task;
 use App\TaskKeyword;
+use Validator;
 
 
 
@@ -37,6 +38,18 @@ class ServicesController extends Controller
 
     public function store(Request $request)
     {
+		$validator = Validator::make($request->all(), [
+            'name' => 'required|unique:services',
+            'description' => 'required|max:100',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('/svp/addServices')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+
+
 
         $exsistingService = Service::where('name',$request->name)->get();
         

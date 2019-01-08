@@ -404,4 +404,23 @@ class SVPsController extends Controller
         return $svp->count();
     }
 
+    public function delete(Request $request,$id){
+        $svpInfo=SVP::find($id);
+      //  dd($svpInfo->isdeleted);
+        if(md5($request->pass)==($svpInfo->password)){
+            $svpInfo->isdeleted=1;
+            $svpInfo->save();
+            return redirect('/')->with('success','Your account has been deleted !');
+        }
+        else{
+            return redirect('/svp/profile')->with('error','Incorrect password !');
+        }
+        
+    }
+
+    public function checkDeleted(Request $request){
+       // SVP::where->('email',$request->email)->where('password',md5($request->password))->get();
+        dd($request);
+    }
+
 }//end of class

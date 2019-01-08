@@ -4,9 +4,26 @@
 
 <div class="container" data-pg-collapsed>
     <hr>
-        
+        <div class="row pg-empty-placeholder"></div>
         <div class="row" data-pg-collapsed>
-            <div class="col-md-9 pl-auto pr-auto" data-pg-collapsed> 
+            <div class="col-md-2" data-pg-collapsed>
+                <div class="card bg-dark text-white" data-pg-collapsed>
+                    <img class="card-img" alt="Card image" src="http://pinegrow.com/placeholders/img11.jpg"/>    
+                </div>             
+                
+                <div class="card bg-dark text-white" data-pg-collapsed>
+                        <img class="card-img" alt="Card image" src="http://pinegrow.com/placeholders/img11.jpg"/>    
+                </div>             
+               
+                <div class="card bg-dark text-white" data-pg-collapsed>
+                        <img class="card-img" alt="Card image" src="http://pinegrow.com/placeholders/img11.jpg"/>    
+                </div>             
+             
+                <div class="card bg-dark text-white" data-pg-collapsed>
+                        <img class="card-img" alt="Card image" src="http://pinegrow.com/placeholders/img11.jpg"/>    
+                </div>             
+            </div>
+            <div class="col-md-7" data-pg-collapsed> 
                 
                 <!-- start notification container-->
 
@@ -35,12 +52,23 @@
                 <!--end-->
 
             </div>
-            <!-- Right-Pane Ads with col-md-3-->
-                @include('inc.rightAds')               
-            <!-- End of Ads -->
+            <div class="col-md-2" data-pg-collapsed>
+                    <div class="card bg-dark text-white" data-pg-collapsed>
+                        <img class="card-img" alt="Card image" src="http://pinegrow.com/placeholders/img11.jpg"/>    
+                    </div>             
+                    
+                    <div class="card bg-dark text-white" data-pg-collapsed>
+                            <img class="card-img" alt="Card image" src="http://pinegrow.com/placeholders/img11.jpg"/>    
+                    </div>             
+                   
+                    <div class="card bg-dark text-white" data-pg-collapsed>
+                            <img class="card-img" alt="Card image" src="http://pinegrow.com/placeholders/img11.jpg"/>    
+                    </div>             
+                 
+                    <div class="card bg-dark text-white" data-pg-collapsed>
+                            <img class="card-img" alt="Card image" src="http://pinegrow.com/placeholders/img11.jpg"/>    
+                    </div>             
+            </div>
         </div>
-        <!-- Bottom-Pane Ads-->
-            @include('inc.bottomAds')             
-        <!-- End of Ads -->
     </div>
 @endsection 
