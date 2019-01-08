@@ -8,8 +8,21 @@
             <div class="row"> 
                 <div class="col-md-12"> 
                     <div class="au-breadcrumb-content"> 
-                        <div class="au-breadcrumb-left"> 
-                                                     
+                        <div class="au-breadcrumb-left" data-pg-collapsed> 
+                            <span class="au-breadcrumb-span">You are here:</span> 
+                            <ul class="list-unstyled list-inline au-breadcrumb__list"> 
+                                <li class="list-inline-item"> 
+                                    <a href="dash">Home</a> 
+                                </li>         
+                                <li class="list-inline-item seprate"> 
+                                    <span>/</span> 
+                                </li>         
+                                <li class="list-inline-item">Template Selection</li>
+                                <li class="list-inline-item seprate"> 
+                                    <span>/</span> 
+                                </li>         
+                                <li class="list-inline-item">Step 2</li>
+                            </ul>     
                         </div>                     
                         <form class="au-form-icon--sm" action="/client/search" method="post">
                             {{ csrf_field() }} 

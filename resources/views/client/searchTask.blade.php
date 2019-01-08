@@ -12,8 +12,21 @@
             <div class="row"> 
                 <div class="col-md-12"> 
                     <div class="au-breadcrumb-content"> 
-                        <div class="au-breadcrumb-left"> 
-                                                     
+                        <div class="au-breadcrumb-left" data-pg-collapsed> 
+                            <span class="au-breadcrumb-span">You are here:</span> 
+                            <ul class="list-unstyled list-inline au-breadcrumb__list"> 
+                                <li class="list-inline-item"> 
+                                    <a href="dash">Home</a> 
+                                </li>         
+                                <li class="list-inline-item seprate"> 
+                                    <span>/</span> 
+                                </li>         
+                                <li class="list-inline-item">Manage Event</li>
+                                <li class="list-inline-item seprate"> 
+                                        <span>/</span> 
+                                    </li>         
+                                    <li class="list-inline-item">Search Results</li>
+                            </ul>     
                         </div>                     
                         <form class="au-form-icon--sm" action="/client/search" method="post">
                             {{ csrf_field() }} 
@@ -49,14 +62,7 @@
                         </div>                         
                     </form>
                 </div>
-                <hr/>
-                <div class="row ">
-                    <h6 class="font-weight-bold">Online Status</h6>
-                    <div class="form-check col-md-12 form-check-inline pl-2"> 
-                        <input class="form-check-input" type="checkbox" id="formInput50" value="option1"> 
-                        <label class="form-check-label" for="formInput50">Online</label>                         
-                    </div>
-                </div>
+                
                 <hr/>
                 <div class="row ">
                     <h6 class="font-weight-bold">Seller Level</h6>
@@ -77,19 +83,7 @@
                         <label class="form-check-label" for="formInput50">Top Rated</label>                         
                     </div>
                 </div>
-                <hr/>
-                <div class="row">
-                    <div class="form-group col-md-12 pl-0"> 
-                        <label for="formInput9">
-                            <h6> <strong>Service Location</strong> </h6>
-                        </label>                         
-                        <select id="formInput9" class="form-control pt-0 "> 
-                            <option value="0">Select a District</option>                             
-                            <option value="1">1</option>                             
-                            <option>3</option>                             
-                        </select>
-                    </div>
-                </div>                 
+                                 
             </div>
             <div class="col-md-10">
                 @if(count($service_ids)>0)
