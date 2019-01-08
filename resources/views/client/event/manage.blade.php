@@ -95,17 +95,17 @@ $default_tasks = EventTemplateTasksController::getTasks($my_event_id);
                                         <div class="col-sm-10">
                                             <div class="emailtag">
                                                 <div id="tags" name="tags">
-                                                    <input type="text" value="">
-                                                    <input type="hidden" id="emails"name="emails" >
+                                                    <input type="email" value="" id="email" name="email">
+                                                    <input type="hidden" id="emails" name="emails" >
                                                 </div>
                                             </div>
                                         </div>
                                     </div>                                     
                                 </div>
-                                <input type="hidden" id="event_id"name="event_id" value="{{$my_event->event_id}}" >
+                                <input type="hidden" id="event_id2"name="event_id" value="{{$my_event->event_id}}" >
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-primary">Invite</button>
+                                    <button type="submit" class="btn btn-primary" onclick="setEmail()">Invite</button>
                                 </div>
                             </form>
                             </div>
@@ -126,11 +126,11 @@ $default_tasks = EventTemplateTasksController::getTasks($my_event_id);
                                 </div>
                                 <div class="col-md-4 mb-3">
                                     <label for="validationDefault02">From</label>
-                                    <input type="time" class="form-control" placeholder="" name = "event_stime" id="event_date" value="{{$my_event->stime}}" required>
+                                    <input type="time" class="form-control" placeholder="" name = "event_stime" id="event_stime" value="{{$my_event->stime}}" required>
                                 </div>
                                 <div class="col-md-4 mb-3">
                                     <label for="validationDefault02">To</label>
-                                    <input type="time" class="form-control" placeholder="" name = "event_etime" id="event_date" value="{{$my_event->etime}}" required>
+                                    <input type="time" class="form-control" placeholder="" name = "event_etime" id="event_etime" value="{{$my_event->etime}}" required>
                                 </div>
                                 <input type="hidden" name="event_id" id="event_id" value="{{$my_event->event_id}}">
                             
@@ -192,6 +192,7 @@ $default_tasks = EventTemplateTasksController::getTasks($my_event_id);
                 <div class="row">
                     <button type="button" name="save" id="save" class="btn btn-primary">Save Changes</button>
                 </div>
+                @include('client.event.chat2')
             </div>
             <!-- Right-Pane Ads with col-md-3-->
             @include('inc.rightAds')               
@@ -203,6 +204,11 @@ $default_tasks = EventTemplateTasksController::getTasks($my_event_id);
         <!-- End of Ads -->         
     </div>     
 </section>
+<script>
+        function setEmail() {
+            document.getElementById('emails').value=document.getElementById('emails').value+" "+document.getElementById('email').value;
+        }
+</script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
         crossorigin="anonymous">
