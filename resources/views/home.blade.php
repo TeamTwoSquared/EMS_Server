@@ -249,7 +249,7 @@
 			<div class="row copyright">
 				<div class="col-md-12">
 					<p class="pull-left">
-						<small class="block">&copy; Copyright © 2018 EMS. All rights reserved. · <a href="/privacy">Privacy</a> · <a href="/tos">Terms</a></small>  
+						<small class="block">&copy; Copyright © 2018 EMS. All rights reserved.</small>  
 					</p>
 				</div>
 			</div>
