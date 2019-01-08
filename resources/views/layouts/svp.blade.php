@@ -4,7 +4,9 @@ if(!(SVPsController::checkLogged(0))){
 header("Location: /svp/login");
 die();
 }
-$svp=SVPsController::getSVP();                   
+$svp=SVPsController::getSVP(); 
+use App\Http\Controllers\review\ReviewsController;
+$svp_star = ReviewsController::showStar($svp->star);                  
 @endphp
 <!DOCTYPE html> 
 <html lang="en"> 
@@ -74,10 +76,10 @@ $svp=SVPsController::getSVP();
                             @endif
                         </p> 
                         <p class="card-text text-sm-center">
-                            @for ($i = 0; $i < $svp->star; $i++)
+                            @for ($i = 0; $i < $svp_star; $i++)
                                 <i class="fa fa-star"></i>
                             @endfor
-                            {{$svp->star}}.0
+                            {{$svp_star}}.0
                         </p>                 
                         <a href="/svp/logout">Sign out</a> 
                     </div>  
@@ -103,17 +105,15 @@ $svp=SVPsController::getSVP();
                                 <ul class="list-unstyled navbar__sub-list js-sub-list">
                                     <li>
                                         <a href="/svp/service">
-                                            <i class="far fa-check-square"></i>Single Service</a>
+                                            <i class="fas fa-circle"></i>Single Service</a>
                                     </li>
                                     <li>
                                         <a href="/svp/packageService">
-                                            <i class="far fa-check-square"></i>Service Packages</a>
+                                            <i class="fas fa-circle"></i>Service Packages</a>
                                     </li>
                                 </ul>
                             </li>                  
-                            <li> 
-                                <a href="/svp/client"> <i class="fas fa fa-user"></i>Clients</a> 
-                            </li>                     
+                                                
                             <li> 
                                 <a href="/svp/booking"> <i class="fas fa fa-book"></i>Bookings</a> 
                             </li> 
@@ -139,13 +139,7 @@ $svp=SVPsController::getSVP();
                                 </div>                         
                                 <div class="header-button2"> 
                                     <div class="header-button-item js-item-menu"> 
-                                        <i class="zmdi zmdi-search"></i> 
-                                        <div class="search-dropdown js-dropdown"> 
-                                            <form action=""> 
-                                                <input class="au-input au-input--full au-input--h65" type="text" placeholder="Search for datas &amp; reports..."/> 
-                                                <span class="search-dropdown__icon"> <i class="zmdi zmdi-search"></i> </span> 
-                                            </form>                                     
-                                        </div>                                 
+                                                                         
                                     </div>                             
                                     <div class="header-button-item has-noti js-item-menu"> 
                                         <i class="zmdi zmdi-notifications"></i> 
@@ -171,12 +165,7 @@ $svp=SVPsController::getSVP();
                                             <div class="account-dropdown__item"> 
                                                 <a href="/svp/profile"> <i class="zmdi zmdi-account"></i>Account</a> 
                                             </div>                                     
-                                            <div class="account-dropdown__item"> 
-                                                <a href="/svp/settings"> <i class="zmdi zmdi-settings"></i>Setting</a> 
-                                            </div>                                     
-                                            <div class="account-dropdown__item"> 
-                                                <a href="/svp/billing"> <i class="zmdi zmdi-money-box"></i>Billing</a> 
-                                            </div>
+                                            
                                             <div class="account-dropdown__item"> 
                                                 <a href="/svp/ads"> <i class="fab fa-buysellads"></i>Advertisements</a> 
                                             </div>                                     
@@ -210,10 +199,10 @@ $svp=SVPsController::getSVP();
                                 @endif
                             </p> 
                             <p class="card-text text-sm-center">
-                                @for ($i = 0; $i < $svp->star; $i++)
+                                @for ($i = 0; $i < $svp_star; $i++)
                                     <i class="fa fa-star"></i>
                                 @endfor
-                                {{$svp->star}}.0
+                                {{$svp_star}}.0
                             </p>                 
                             <a href="/svp/logout">Sign out</a> 
                         </div>                 
@@ -222,16 +211,11 @@ $svp=SVPsController::getSVP();
                                 <li class="active has-sub"> 
                                     <a class="js-arrow" href="/svp/dash"> <i class="fas fa-tachometer-alt"></i>Dashboard </a> 
                                 </li>                         
-                                <li> 
-                                    <a href="svp/inbox"> <i class="fas fa-chart-bar"></i>Inbox</a> 
-                                    <span class="inbox-num">3</span> 
-                                </li>                         
+                                                         
                                 <li> 
                                     <a href="svp/service"> <i class="fas fa-shopping-basket"></i>Services</a> 
                                 </li>                         
-                                <li> 
-                                    <a href="/svp/client"> <i class="fas fa fa-user"></i>Clients </a> 
-                                </li>                         
+                                                        
                                 <li> 
                                     <a href="/svp/booking"> <i class="fas fa fa-book"></i>Bookings </a> 
                                 </li>                         

@@ -36,17 +36,10 @@
             <div class="col-md-9">
                 <div class="row pr-2">
                         <div class="jumbotron"> 
-                                <h1>Our Support Policy</h1> 
-                                <h4>When you Get service from EMS, you are getting support*. In order to understand the support type, please read the following details.
-
-                                        *All our FREE service get Community Support. </h4>
-                                <ul>
-                                        <li>1. All supported service have 6 months of included support.</li>
-                                        <li>2. You have the option to add a further 6 months of support (a support upgrade) when getting service.</li>
-                                        <li>3. Your item can only have a maximum of 12 months valid support at any given time.</li>
-                                        <li>4. You also have the option to purchase a support extension or a support renewal if you have less than 6 months of support remaining and the author is still supporting the item.</li>
-                                        <li>5. The cost of support is calculated as a percentage of the item price (the price paid to the author for the item licence) and is determined by when you make the support purchase.</li>
-                                </ul>
+                                <h1>Our Support Policy</h1>  
+                                Our web site EMS is  committed to providing quality services to you and this policy outlines our ongoing obligations to you in respect of how we manage your Personal Information.<br><br>
+We collect your Personal Information for the primary purpose of providing our services to you, providing information to our clients and marketing. We may also use your Personal Information for secondary purposes closely related to the primary purpose, in circumstances where you would reasonably expect such use or disclosure. You may unsubscribe from our system at any time.
+And we will make sure to protect your personel information and not to misuse them.
 
                                 <a href='/client/getSupport'>
                                     <button  class="btn btn-primary btn-lg" role="button">Get A Support</button>
@@ -57,49 +50,10 @@
             </div>   
             
             
-            <div class="col-md-3 " data-pg-collapsed> 
-                <div class="row">
-                    <img src="\storage\images\services\ls.jpg"/>
-                    <hr/> 
-                </div>
-                <div class="row">
-                      <hr></hr>
-                      <hr></hr>
-                </div>
-                
-                <div class="row">
-                    <img src="\storage\images\services\ls.jpg"/>
-                    <hr/> 
-                </div>                
-            </div>             
+            @include('inc.rightAds')             
         </div>         
         <hr/> 
-        <div class="row" data-pg-collapsed> 
-            <div class="col-md-4"> 
-                <img src="\storage\images\services\ls.jpg"> 
-                <hr/> 
-            </div>             
-            <div class="col-md-4"> 
-                <img src="\storage\images\services\ls.jpg"> 
-                <hr/> 
-            </div>             
-            <div class="col-md-4"> 
-                <img src="\storage\images\services\ls.jpg"> 
-                <hr/> 
-            </div>             
-            <div class="col-md-4"> 
-                <img src="\storage\images\services\ls.jpg"> 
-                <hr/> 
-            </div>             
-            <div class="col-md-4"> 
-                <img src="\storage\images\services\ls.jpg"> 
-                <hr/> 
-            </div>             
-            <div class="col-md-4"> 
-                <img src="\storage\images\services\ls.jpg"> 
-                <hr/> 
-            </div>             
-        </div>         
+        @include('inc.bottomAds')         
     </div>     
 </section>
 

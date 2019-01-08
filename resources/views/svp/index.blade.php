@@ -1,3 +1,7 @@
+@php
+  header("Location: /svp/service");
+die();  
+@endphp
 @extends('layouts.svp')
 @section('content')
 

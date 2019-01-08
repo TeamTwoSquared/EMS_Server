@@ -12,7 +12,7 @@ $svp=SVPsController::getSVP();
     <div class="section__content section__content--p30"> 
         <div class="container-fluid">
             <div class="row" data-pg-collapsed> 
-                <div class="col-lg-9"> 
+                <div class="col-md-9 mr-auto ml-auto"> 
                     <div class="card"> 
                         <div class="card-header">Change your Account Details</div>             
                         <div class="card-body card-block"> 
@@ -68,7 +68,7 @@ $svp=SVPsController::getSVP();
 
 
             <div class="row" data-pg-collapsed>
-                <div class="col-lg-9">
+                <div class="col-md-9 mr-auto ml-auto">
                     <div class="card">
                         <div class="card-header">Change your Profile Picture</div>
                         <div class="card-body card-block">
@@ -86,20 +86,7 @@ $svp=SVPsController::getSVP();
                 </div>
             </div>
 
-            <div class="row" data-pg-collapsed>
-                    <div class="col-lg-9">
-                        <div class="card">
-                            <div class="card-header"><h5>Danger Zone</h5></div>
-                            <div class="card-body card-block">
-                                <h6>Delete the account 
-                                  
-                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Delete</button>
-                                    
-                                </h6>
-                            </div>
-                        </div>
-                    </div>
-            </div>
+            
         </div>
     </div>
 </section>            
