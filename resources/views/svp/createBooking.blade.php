@@ -21,10 +21,20 @@ $i=1; //use to have checkbox number
                             <label for="text-input" class="form-control-label">Event Date</label>                             
                         </div>                         
                         <div class="col-12 col-md-4"> 
-                                <input id="datepicker" name="date"/>
+                                <input id="datepicker" name="date" disabled/>
                                 <script>
                                     $('#datepicker').datepicker({
-                                        format: 'yyyy-dd-mm',
+                                        format: 'yyyy-mm-dd',
+                                        minDate: function() {
+                                        var date = new Date();
+                                        date.setDate(date.getDate()+1);
+                                        return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+                                    },
+                                        maxDate: function() {
+                                            var date = new Date();
+                                            date.setDate(date.getFullYear()+2);
+                                            return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+                                            },
                                         uiLibrary: 'bootstrap4'
                                     });
                                 </script>
@@ -35,7 +45,7 @@ $i=1; //use to have checkbox number
                             <label for="text-input" class="form-control-label">Start Time</label>                             
                         </div>                         
                         <div class="col-12 col-md-4">
-                                <input id="s_time" name="start_time"/>
+                                <input id="s_time" name="start_time"disabled/>
                                 <script>
                                     $('#s_time').timepicker({
                                         uiLibrary: 'bootstrap4'
@@ -48,9 +58,18 @@ $i=1; //use to have checkbox number
                             <label for="text-input" class="form-control-label">End Time</label>                             
                         </div>                         
                         <div class="col-12 col-md-4">
-                                <input id="e_time" name="end_time"/>
+                                <input id="e_time" name="end_time" disabled/>
                                 <script>
                                     $('#e_time').timepicker({
+                                        close: function (e) {
+                                            var startTime = $('#s_time').val();   
+                                            var endTime   = $('#e_time').val();    
+                                            if (startTime > endTime) 
+                                            {
+                                                alert('End time always greater then start time.');
+                                                $('#e_time').val('');
+                                            }
+                                        },
                                         uiLibrary: 'bootstrap4'
                                     });
                                 </script> 

@@ -17,11 +17,7 @@ use App\Http\Controllers\service\ServiceCustomerBookingsController;
                         <i class="zmdi zmdi-plus"></i>add Booking&nbsp;
                     </button>
                 </a>
-                <a href="booking/delete">
-                    <button class="au-btn au-btn-icon au-btn--green au-btn--small bg-danger">
-                        <i class="zmdi zmdi-minus"></i>remove Booking&nbsp;
-                    </button>
-                </a>
+                
             </div>
         </div>
         <div class="table-responsive table-responsive-data2">
@@ -44,21 +40,17 @@ use App\Http\Controllers\service\ServiceCustomerBookingsController;
                             @php
                             $date = new DateTime($booking->date);                                
                             @endphp 
-                            <div class="dayofmonth">{{$date->format('d')}}</div>                                             
-                            <div class="dayofweek">{{$date->format('l')}}</div>                                             
-                            <div class="shortdate text-muted">{{$date->format('F')}}, {{$date->format('Y')}}</div>                                             
+                            {{$booking->date}}
                         </td>
                         <td class="agenda-time">
                             <div>{{$booking->stime}}</div>
                             <div>to</div>
                             <div>{{$booking->etime}}</div> 
                         </td> 
-                        @if($booking->status == 0)
+                        @if($booking->status == 1)
                         <td><span class="status--process">active</span></td>
-                        @elseif($booking->status == 1)
-                        <td><span class="status--pending">pending</span></td>
                         @else
-                        <td><span class="status--denied">blocked</span></td>
+                        <td><span class="status--denied">pending</span></td>
                         @endif
                         <td class="active" rowspan="1">
                             @php
@@ -78,17 +70,19 @@ use App\Http\Controllers\service\ServiceCustomerBookingsController;
                         </td>  
                         <td>
                             <div class="table-data-feature">
-                                <a href="booking/block/{{$bookings[0]->booking_id}}">
-                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Lock">
-                                        <i class="fa fa-lock"></i>
+                                @if($booking->status == 0)
+                                <a href="booking/block/{{$booking->booking_id}}">
+                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Active">
+                                        <i class="fa fa-check-circle"></i>
                                     </button>
-                                </a>                                
+                                </a>
+                                @endif                                
                                 <button onclick ="deleteMe({{$bookings[0]->booking_id}})" class="item" data-toggle="tooltip" data-placement="top" title="Delete">
                                     <i class="zmdi zmdi-delete"></i>
                                     <script>
                                         function deleteMe(id) 
                                         {
-                                            if (confirm("Are you sure you want to delete this catergory!")) 
+                                            if (confirm("Are you sure you want to delete this booking!")) 
                                             {
                                                 window.location.replace("booking/delete/"+id);
                                             } 

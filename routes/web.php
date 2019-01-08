@@ -208,6 +208,7 @@ Route::get('/client/myevents/{id}','event\TemplatesController@client_index2');
 Route::get('/client/search1/{text}','service\ServicesController@client_search_text');
 Route::get('/client/search2/{id}','service\ServicesController@client_search_id');
 Route::post('/client/myevents/store','InvitationsController@store');
+Route::post('/client/myevents/sendMessage','ChatboxController@sendMessage');
 
 Route::post('/client/search','service\ServicesController@client_normal_search');
 Route::get('/client/view/service/{id}','service\ServicesController@client_view');

@@ -6,18 +6,25 @@ use Illuminate\Http\Request;
 use App\Booking;
 use App\SVPBookingService;
 use App\Mail\SVPBookingSendClientInvitation;
+use App\Mail\ClientBookingSendSVPInvitation;
+use App\Mail\DeleteBooking;
+use App\Mail\ApproveBooking;
 use App\Http\Controllers\svp\SVPsController;
 use Illuminate\Support\Facades\Mail;
 use App\EventTemplateTask;
 use App\ServiceCustomerBooking;
 use App\Task;
 use App\Event;
+use App\Http\Controllers\service\ServiceCustomerBookingsController;
+use App\SVP;
+use App\Service;
 
 class BookingsController extends Controller
 {
     public function make_reservation($event_id,$task_id,$svp_id,$service_id)
     {
         $event = Event::find($event_id);
+		$svp= SVP::find($svp_id);
 
         $booking = new Booking();
         $booking->date = $event->date;
@@ -27,6 +34,10 @@ class BookingsController extends Controller
         $booking->service_provider_id = $svp_id;
         $booking->service_id = $service_id;
         $booking->save();
+		
+		$data['booking_id']=$booking->booking_id;
+        $data['service'] = $service_id;
+        Mail::to($svp->email)->send(new ClientBookingSendSVPInvitation($data));
 
 
         $prv_ett = EventTemplateTask::where('event_id',$event_id)->where('task_id',$task_id);
@@ -82,7 +93,7 @@ class BookingsController extends Controller
         $booking->date =  $request->date;
         $booking->stime =  $request->start_time;
         $booking->etime =  $request->end_time;
-        $booking->status = 0;
+        $booking->status = 1;
         $booking->service_provider_id =  $svp->service_provider_id;
         $booking->save();
 
@@ -108,30 +119,34 @@ class BookingsController extends Controller
     }
 
     
-    public function block($id)
+    public function block($booking_id)
     {
-        $booking = Booking::where('booking_id',$id)->get();
+        $booking = Booking::where('booking_id',$booking_id)->get();
         $booking = $booking[0];
-        if ($booking->status==2)
+        if ($booking->status==0)
         {
-            $booking->status=0;
-        }
-        else if ($booking->status==0)
-        {
-            $booking->status=2;
-        }
-        else
-        {
-            $booking->status=0;
+            $booking->status=1;
+            $data['booking_id']=$booking_id;
+            $clients=ServiceCustomerBookingsController::getClients($booking_id);
+            foreach($clients as $client)
+            {
+                Mail::to($client->email)->send(new ApproveBooking($data));
+            }
         }
         $booking->save();
         return redirect('/svp/booking');
     }
 
     
-    public function destroy($id)
+    public function destroy($booking_id)
     {
-        Booking::where('booking_id',$id)->delete();        
+        $clients=ServiceCustomerBookingsController::getClients($booking_id);
+        $data['booking_id']=$booking_id;
+        foreach($clients as $client)
+        {
+            Mail::to($client->email)->send(new DeleteBooking($data));
+        }
+        Booking::where('booking_id',$booking_id)->delete();       
         return redirect('/svp/booking');
     }
 
